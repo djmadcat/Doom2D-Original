@@ -1,0 +1,17 @@
+wad:	start -file !.!
+asm:	asm !:!\!
+bas:	d:\dos\qbasic/g !:!\!
+mak:	d:\tc\bin\make -f!:!\!.!
+prj:	d:\bc\bin\bc /rD !.!
+c:	d:\bc\bin\bc !.!
+vga:	vgaed2 -file !.!
+rar:	rar en !.!
+arj:	rar en !.!
+zip:	rar en !.!
+voc:	d:\util\voc !.! 1
+wad:	d:\util\wad !
+mod:	d:\util\sound\vpreg !
+snd:	d:\util\sbsnd !.! 11000 1
+stm:	d:\util\stm\stmod !.! J
+sti:	d:\util\sti !.! 8000 1
+fli:	d:\vc\fli !.!

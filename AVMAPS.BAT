@@ -1,0 +1,1 @@
+doom2d -file levels\avmaps.wad -warp 18 -cheat
