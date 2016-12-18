@@ -21,7 +21,7 @@ typedef unsigned int dword;
 extern "C" {
 #endif
 
-void logo(const char *,...);
+void logo(const char *, ...);
 
 void setgamma(int);
 

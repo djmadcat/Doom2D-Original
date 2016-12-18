@@ -19,8 +19,9 @@ typedef unsigned int dword;
 
 #define random(n) (rand()%(n))
 
-void logo(const char *,...);
-void logo_gas(int,int);
+void logo(const char *, ...);
+
+void logo_gas(int, int);
 
 extern int gamma;
 extern int snd_card;

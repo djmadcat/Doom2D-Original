@@ -18,19 +18,19 @@ extern "C" {
 #define tlength(f) (TIMER_FREQ/f)
 
 // тип драйвера
-enum{
-  ST_NONE=-1,	// нет карты
-  ST_DAC,	// побайтовый ЦАП
-  ST_DMA	// DMA-карта
+enum {
+    ST_NONE = -1,       // нет карты
+    ST_DAC,             // побайтовый ЦАП
+    ST_DMA              // DMA-карта
 };
 
 // заголовок инструмента (DMI)
-typedef struct{
-  unsigned int   len,		// длина в байтах
-                 rate,		// частота в Гц.
-                 lstart,	// начало повтора в байтах от начала данных
-                 llen;		// длина повтора в байтах
-}snd_t;
+typedef struct {
+    unsigned int len,       // длина в байтах
+        rate,               // частота в Гц.
+        lstart,             // начало повтора в байтах от начала данных
+        llen;               // длина повтора в байтах
+} snd_t;
 
 // установить драйвер n
 // (см. snddrv.h)
@@ -50,16 +50,16 @@ void S_done(void);
 // возвращает номер канала, на котором играется звук
 // если c==0, то звук попадет в любой свободный канал
 // r - это относительная частота (обычно 1024)
-short S_play(snd_t *s,short c,unsigned r,short v);
+short S_play(snd_t *s, short c, unsigned r, short v);
 
 // остановить звук на канале c (1-8)
 void S_stop(short c);
 
 // установить частоту r у звука на канале c
-void S_setrate(short c,unsigned r);
+void S_setrate(short c, unsigned r);
 
 // установить громкость v (0-255) у звука на канале c
-void S_setvolume(short c,int v);
+void S_setvolume(short c, int v);
 
 // начать музыку
 void S_startmusic(void);
@@ -76,12 +76,12 @@ void T_init(void);
 void T_done(void);
 
 // громкость звука и музыки (0-128)
-extern short snd_vol,mus_vol;
+extern short snd_vol, mus_vol;
 
 extern char s_interp;
 
 // порт, DMA, IRQ
-extern unsigned short snd_port,snd_dma,snd_irq;
+extern unsigned short snd_port, snd_dma, snd_irq;
 
 // тип карты (см. выше)
 extern short snd_type;

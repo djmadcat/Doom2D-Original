@@ -40,24 +40,24 @@
 
 */
 
-typedef struct{
-  char n[8];			// название текстуры
-  char t;			// тип: 0-сплошная 1-"решётка"
-}old_wall_t;
+typedef struct {
+    char n[8];              // название текстуры
+    char t;                 // тип: 0-сплошная 1-"решётка"
+} old_wall_t;
 
-typedef struct{
-  short x,y;			// координаты
-  short t;			// тип
-  unsigned short f;		// флаги
-}old_thing_t;
+typedef struct {
+    short x, y;             // координаты
+    short t;                // тип
+    unsigned short f;       // флаги
+} old_thing_t;
 
-typedef struct{
-  unsigned char x,y;		// координаты/8
-  unsigned char t;		// тип
-  unsigned char tm;		// должно быть 0
-  unsigned char a,b;		// обычно - координаты/8 двери
-  unsigned short c;		// не используется (вроде бы)
-}old_switch_t;
+typedef struct {
+    unsigned char x, y;     // координаты/8
+    unsigned char t;        // тип
+    unsigned char tm;       // должно быть 0
+    unsigned char a, b;     // обычно - координаты/8 двери
+    unsigned short c;       // не используется (вроде бы)
+} old_switch_t;
 
 /* Новый формат - начиная с версии 1.05 alpha
 
@@ -68,25 +68,32 @@ typedef struct{
 
 */
 
-typedef struct{
-  char id[8];			// "подпись" - "Doom2D\x1A"
-  short ver;			// версия карты
-}map_header_t;
+typedef struct {
+    char id[8];             // "подпись" - "Doom2D\x1A"
+    short ver;              // версия карты
+} map_header_t;
 
-typedef struct{
-  short t;			// тип блока
-  short st;			// подтип (метод упаковки, например)
-				// если не используется, то должен быть 0
-				// (для будущей совместимости)
-  int sz;			// размер (сколько байт после этой структуры)
-}map_block_t;
+typedef struct {
+    short t;                // тип блока
+    short st;               // подтип (метод упаковки, например)
+    // если не используется, то должен быть 0
+    // (для будущей совместимости)
+    int sz;                 // размер (сколько байт после этой структуры)
+} map_block_t;
 
-enum{
-  MB_COMMENT=-1,MB_END=0,
-  MB_WALLNAMES,MB_BACK,MB_WTYPE,MB_FRONT,MB_THING,MB_SWITCH,
-  MB_MUSIC,MB_SKY,
-  MB_SWITCH2,
-  MB__UNKNOWN
+enum {
+    MB_COMMENT = -1,
+    MB_END = 0,
+    MB_WALLNAMES,
+    MB_BACK,
+    MB_WTYPE,
+    MB_FRONT,
+    MB_THING,
+    MB_SWITCH,
+    MB_MUSIC,
+    MB_SKY,
+    MB_SWITCH2,
+    MB__UNKNOWN
 };
 
 /* Версия 0  (Doom2D версии 1.05 alpha)
@@ -125,22 +132,22 @@ enum{
 
 */
 
-#define SW_PL_PRESS		1
-#define SW_MN_PRESS		2
-#define SW_PL_NEAR		4
-#define SW_MN_NEAR		8
-#define SW_KEY_R		16
-#define SW_KEY_G		32
-#define SW_KEY_B		64
+#define SW_PL_PRESS     1
+#define SW_MN_PRESS     2
+#define SW_PL_NEAR      4
+#define SW_MN_NEAR      8
+#define SW_KEY_R        16
+#define SW_KEY_G        32
+#define SW_KEY_B        64
 
-typedef struct{
-  unsigned char x,y;		// координаты/8
-  unsigned char t;		// тип
-  unsigned char tm;		// должно быть 0
-  unsigned char a,b;		// обычно - координаты/8 двери
-  unsigned short c;		// не используется (вроде бы)
-  unsigned char f;		// флаги
-}switch2_t;
+typedef struct {
+    unsigned char x, y;     // координаты/8
+    unsigned char t;        // тип
+    unsigned char tm;       // должно быть 0
+    unsigned char a, b;     // обычно - координаты/8 двери
+    unsigned short c;       // не используется (вроде бы)
+    unsigned char f;        // флаги
+} switch2_t;
 
 /* Версия 2  (Doom2D версии 1.17 alpha)
 
@@ -148,7 +155,7 @@ typedef struct{
 
 */
 
-#define LAST_MAP_VER 2	// Самая последняя версия карты
+#define LAST_MAP_VER 2    // Самая последняя версия карты
 
 #pragma pack()
 
